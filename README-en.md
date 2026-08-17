@@ -236,6 +236,55 @@ Use the local setup or Docker instructions below.
 
 - Local deployment requires Python 3.11 or later
 - On Windows, avoid project paths containing non-ASCII characters, special characters, or spaces
+- **FFmpeg** is a required system dependency for video processing and encoding
+
+#### Install System Dependencies
+
+##### Windows
+
+Recommended installation using [Chocolatey](https://chocolatey.org/install) or [Scoop](https://scoop.sh/):
+
+```powershell
+# Using Chocolatey
+choco install ffmpeg
+
+# Or using Scoop
+scoop install ffmpeg
+```
+
+You can also download binary releases from [FFmpeg.org](https://ffmpeg.org/download.html) and add them to your system PATH.
+
+##### macOS
+
+Using [Homebrew](https://brew.sh/):
+
+```shell
+brew install ffmpeg
+```
+
+##### Linux
+
+Using your package manager:
+
+```shell
+# Ubuntu / Debian
+sudo apt-get install ffmpeg
+
+# CentOS / RHEL
+sudo yum install ffmpeg
+
+# Arch
+sudo pacman -S ffmpeg
+
+# Alpine
+apk add ffmpeg
+```
+
+Verify installation:
+
+```shell
+ffmpeg -version
+```
 
 #### ① Clone the Project
 

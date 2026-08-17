@@ -231,6 +231,55 @@
 
 - 本地部署需要 Python 3.11 或更高版本
 - Windows 用户建议避免使用包含中文、特殊字符或空格的项目路径
+- **FFmpeg** 是必需的系统依赖，用于视频处理和编码
+
+#### 安装系统依赖
+
+##### Windows
+
+推荐使用 [Chocolatey](https://chocolatey.org/install) 或 [Scoop](https://scoop.sh/)：
+
+```powershell
+# 使用 Chocolatey
+choco install ffmpeg
+
+# 或使用 Scoop
+scoop install ffmpeg
+```
+
+也可以从 [FFmpeg 官网](https://ffmpeg.org/download.html) 下载二进制版本，并将其添加到系统 PATH。
+
+##### macOS
+
+使用 [Homebrew](https://brew.sh/)：
+
+```shell
+brew install ffmpeg
+```
+
+##### Linux
+
+使用包管理器安装：
+
+```shell
+# Ubuntu / Debian
+sudo apt-get install ffmpeg
+
+# CentOS / RHEL
+sudo yum install ffmpeg
+
+# Arch
+sudo pacman -S ffmpeg
+
+# Alpine
+apk add ffmpeg
+```
+
+验证安装：
+
+```shell
+ffmpeg -version
+```
 
 #### ① 克隆代码
 
