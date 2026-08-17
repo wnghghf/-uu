@@ -1,0 +1,119 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  MoneyPrintTurbo MCP Integration Quickstart                ║
+║            Claude + YouTube + NexLev + GitHub - Ready to Use! ✓            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+WHAT'S INSTALLED
+════════════════════════════════════════════════════════════════════════════
+✓ Claude LLM Provider        (config ready, needs API key)
+✓ YouTube Publishing         (Upload-Post integration, needs credentials)
+✓ NexLev MCP Service         (Workflow automation, needs API key)
+✓ GitHub Integration         (Already connected ✓)
+✓ MCP Server                 (9 tools ready for Claude)
+
+CONFIGURATION CHECKLIST
+════════════════════════════════════════════════════════════════════════════
+[ ] 1. Get Claude API Key       → https://console.anthropic.com/
+[ ] 2. Get Upload-Post Account  → https://upload-post.com/
+[ ] 3. Get NexLev API Key       → https://prod.dashboard.nexlev.io/
+[ ] 4. Update config.toml       → Fill in your credentials
+[ ] 5. Verify setup             → python3 verify_mcp_setup.py
+[ ] 6. Start MCP server         → python3 app/mcp_server.py
+[ ] 7. Connect Claude           → Edit VS Code or Claude Desktop config
+
+QUICK COMMANDS
+════════════════════════════════════════════════════════════════════════════
+# Interactive setup
+./setup_mcp_integration.sh
+
+# Check status
+python3 verify_mcp_setup.py
+
+# Start MCP server
+python3 app/mcp_server.py
+
+# Test a service
+python3 -c "from app.services.github import github_service; \
+            print(github_service.get_repo_info())"
+
+# Load environment
+source .env
+
+KEY FILES
+════════════════════════════════════════════════════════════════════════════
+config.toml                        → Update with your API keys
+.env                               → Environment variables
+app/mcp_server.py                  → MCP server (start this)
+app/services/nexlev.py             → NexLev integration
+app/services/github.py             → GitHub integration
+docs/MCP_INTEGRATION.md            → Full documentation
+verify_mcp_setup.py                → Status checker
+setup_mcp_integration.sh            → Interactive setup
+
+CLAUDE TOOLS AVAILABLE (9 total)
+════════════════════════════════════════════════════════════════════════════
+1. generate_video              → Create video from text
+2. publish_to_youtube          → Publish to YouTube
+3. get_youtube_channel_info    → Get channel details
+4. call_nexlev_tool            → Call NexLev automation
+5. list_nexlev_tools           → List NexLev tools
+6. get_repository_info         → Get GitHub repo info
+7. get_recent_commits          → Get commit history
+8. create_github_issue         → Create GitHub issues
+9. analyze_content_performance → Analyze video metrics
+
+CONFIGURATION TEMPLATE
+════════════════════════════════════════════════════════════════════════════
+Edit config.toml and add:
+
+    anthropric_api_key = "sk-..."
+    upload_post_api_key = "..."
+    upload_post_username = "your-username"
+    nexlev_api_key = "..."
+
+EXAMPLE CLAUDE PROMPTS
+════════════════════════════════════════════════════════════════════════════
+→ "Generate a video about AI and publish it to my YouTube channel"
+→ "Create a GitHub issue for a new feature"
+→ "List my recent commits"
+→ "Trigger a NexLev workflow for content promotion"
+→ "Get my YouTube channel information"
+
+TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════════
+Problem: MCP server won't start
+→ Run: python3 verify_mcp_setup.py
+→ Check: python3 -c "from app.config import config; print('OK')"
+
+Problem: Claude can't find tools
+→ Ensure MCP server is running: python3 app/mcp_server.py
+→ Restart VS Code or Claude Desktop
+→ Check config in .vscode/settings.json or claude_desktop_config.json
+
+Problem: API calls failing
+→ Verify API keys in config.toml
+→ Check tokens aren't expired
+→ Run: python3 verify_mcp_setup.py for diagnostics
+
+GETTING HELP
+════════════════════════════════════════════════════════════════════════════
+Full Documentation  → Read docs/MCP_INTEGRATION.md
+Status Check        → Run verify_mcp_setup.py
+Interactive Setup   → Run setup_mcp_integration.sh
+
+SECURITY REMINDERS
+════════════════════════════════════════════════════════════════════════════
+⚠️  Never commit API keys to Git
+⚠️  Use .env file for sensitive credentials
+⚠️  Keep .env in .gitignore
+⚠️  Rotate tokens regularly
+
+YOU'RE READY! 🚀
+════════════════════════════════════════════════════════════════════════════
+1. Get your API keys (see CONFIGURATION CHECKLIST)
+2. Update config.toml
+3. Run: python3 verify_mcp_setup.py
+4. Run: python3 app/mcp_server.py
+5. Ask Claude to generate videos and publish them!
+
+Enjoy! 🎬✨

@@ -21,6 +21,7 @@ class UploadPostService:
         self.platforms = config.app.get("upload_post_platforms", ["tiktok", "instagram"])
         self.auto_upload = config.app.get("upload_post_auto_upload", False)
         self.youtube_privacy_status = config.app.get("upload_post_youtube_privacy_status", "public")
+        self.youtube_channel_id = config.app.get("upload_post_youtube_channel_id", "")  # For channel-specific publishing
 
     def is_configured(self) -> bool:
         return bool(self.api_key and self.username and self.enabled)
